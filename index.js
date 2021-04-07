@@ -8,7 +8,12 @@ const fs = require("fs");
 
 
 const teamMember =[];
-
+const questions = [{
+  type: "",
+  message: "",
+  name: "",
+  
+}]
 var inquirer = require('inquirer');
 inquirer
   .prompt([
