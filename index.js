@@ -12,7 +12,20 @@ const questions = [{
   type: "",
   message: "",
   name: "",
-  
+},{
+  type: "",
+  message: "",
+  name: "",
+},{
+  type: "",
+  message: "",
+  name: "",
+},{
+  type: "",
+  message: "",
+  name: "",
+}
+
 }]
 var inquirer = require('inquirer');
 inquirer
