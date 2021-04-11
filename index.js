@@ -4,6 +4,17 @@ const Employee = require("./lib/Employee");
 const Intern = require("./lib/Intern");
 const path = require("path");
 const fs = require("fs");
+const util = require("util");
+
+const mkdirAsync = util.promisify(fs.mkdir);
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const outPut_Dir = path.resolve(__dirname, "output");
+const outPutPath = path.join(outPut_Dir,"team.html");
+
+const render = require("./htmlRenterer");
+
+
 
 
 
