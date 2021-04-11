@@ -1,8 +1,8 @@
 const Employee = require("../lib/Employee");
 
 test("should put name via constructor", () => {
-    const testValue = "EmpolyeeName";
-    const e = new Employee("Subject", 1, "test@test.com", testValue);
+    const name = "Subject";
+    const e = new Employee(name);
     expect(e.name).tobe(testValue);
 });
 
@@ -13,7 +13,7 @@ test("should put email via constructor", () => {
 });
 
 test("should put Id via constructor", () => {
-    const testValue = "EmpolyeeId";
+    const testValue = 100;
     const e = new Employee("Subject", 1, "test@test.com", testValue);
     expect(e.id).tobe(testValue);
 });

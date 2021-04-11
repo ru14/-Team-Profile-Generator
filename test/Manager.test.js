@@ -1,15 +1,20 @@
-const Intern = require("../lib/Intern");
+
+const Manager = require("../lib/Manager");
 
 test("should put OfficeNumber via constructor",() => {
-const testValue = "OfficeNumber";
-const e = new Intern("Subject", 1, "test@test.com", testValue);
+const testValue = 000;
+const e = new Manager("Subject", 1, "test@test.com", testValue);
 expect(e.OfficeNumber).tobe(testValue);
 });
 
-test("getRole() should return \"Intern\"", () =>{
-    const testValue = "Intern";
-    const e = new Intern("Subject", 1, "test@test.com, GitHubUser");
+test("getRole() should return \"Manager\"", () =>{
+    const testValue = "Manager";
+    const e = new Manager("Subject", 1, "test@test.com, OfficeNumber");
     expect(e.getRole()).tobe(testValue)
 });
 
-
+test("should get OfficeNumber via getOfficeNumber()",() => {
+    const testValue = 000;
+    const e = new Manager("Subject", 1, "test@test.com", testValue);
+    expect(e.OfficeNumber()).tobe(testValue);
+    });
