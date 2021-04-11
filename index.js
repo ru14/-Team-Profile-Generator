@@ -66,7 +66,7 @@ const init = async () => {
   let addMore = true;
 
   while(addMore){
-    const {name, id, email, officeNumber} = await inquirer.prompt(questions);
+    const {name, id, email, role} = await inquirer.prompt(questions);
 
     if(role === "Manager"){
       const{officeNumber} = await inquirer.prompt(questionForManager);
@@ -78,5 +78,14 @@ const init = async () => {
       const{school} = await inquirer.prompt(questionForIntern);
       employee.push(new Intern(name, id, email, school))
     }
+    const {adding} = await inquirer.prompt(confirm);
+    addMore = adding;
+  }
+
+  const html = render(employee);
+
+  if (!fs.existsSync(outPutPath)) {
+    const erroe = await mkdirAsync{outPut_Dir};
+    error && console.error(error);
   }
 }
