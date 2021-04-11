@@ -13,43 +13,58 @@ const outPut_Dir = path.resolve(__dirname, "output");
 const outPutPath = path.join(outPut_Dir,"team.html");
 
 const render = require("./htmlRenterer");
+const Employee = require("./lib/Employee");
 
 
 
-
-
-const teamMember =[];
 const questions = [{
-  type: "",
-  message: "",
-  name: "",
+  type: "name",
+  message: "name of Employee?",
+  name: "name",
 },{
-  type: "",
-  message: "",
-  name: "",
+  type: 0,
+  message: "please input Employee's id",
+  name: "id",
 },{
-  type: "",
-  message: "",
-  name: "",
+  type: "email",
+  message: "please input Employee email",
+  name: "email",
 },{
-  type: "",
-  message: "",
-  name: "",
-}
+  type: "list",
+  message: "What is Employee role?",
+  name: "role",
+  choice: ["Manager", "Engineer", "Intern"],
+}];
 
-}]
-var inquirer = require('inquirer');
-inquirer
-  .prompt([
-    /* Pass your questions in here */
-  ])
-  .then(answers => {
-    // Use user feedback for... whatever!!
-  })
-  .catch(error => {
-    if(error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
+const questionForManager = [
+  {
+    type:0,
+    message: "what is Manager's office number?",
+    name: "officeNumber"
+  }];
+const questionForEngineer = [
+  {
+    type: "gitHubLink",
+    message: "please provide Engineer's github?",
+    name: "github"
+  }];
+const questionForIntern = [
+  {
+    type: "school",
+    message: "please provide Intern's School ",
+    name: "school"
+  }];
+const confirm =[{
+  type: "confirm",
+  name: "adding",
+  message: "Do you want to Input more Employee information?"
+}];
+
+const init = async () => {
+  const employee = [];
+  let addMore = true;
+
+  while(addMore){
+    const {name, id, email, officeNumber} = await inquirer.prompt(questions);
+  }
+}
