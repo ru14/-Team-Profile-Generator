@@ -14,6 +14,7 @@ const outPutPath = path.join(outPut_Dir,"team.html");
 
 const render = require("./htmlRenterer");
 const Employee = require("./lib/Employee");
+const inquirer = require("inquirer");
 
 
 
@@ -66,5 +67,16 @@ const init = async () => {
 
   while(addMore){
     const {name, id, email, officeNumber} = await inquirer.prompt(questions);
+
+    if(role === "Manager"){
+      const{officeNumber} = await inquirer.prompt(questionForManager);
+      employee.push(new Manager(name, id, email, officeNumber));
+    }else if (role === "Engineer") {
+      const{github} = await inquirer.prompt(questionForEngineer);
+      employee.push(new Engineer(name, id, email, github));
+    } else {
+      const{school} = await inquirer.prompt(questionForIntern);
+      employee.push(new Intern(name, id, email, school))
+    }
   }
 }
