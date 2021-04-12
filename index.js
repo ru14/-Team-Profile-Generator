@@ -11,7 +11,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const outPut_Dir = path.resolve(__dirname, "output");
 const outPutPath = path.join(outPut_Dir,"team.html");
 
-const render = require("./htmlRenterer");
+const render = require("./htmlRenderer");
 const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 
