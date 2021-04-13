@@ -11,7 +11,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const outPut_Dir = path.resolve(__dirname, "output");
 const outPutPath = path.join(outPut_Dir,"team.html");
 
-const render = require("./htmlRenderer");
+const render = require("./lib/htmlRenderer");
 const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 
@@ -33,7 +33,7 @@ const questions = [{
   type: "list",
   message: "What is Employee role?",
   name: "role",
-  choice: ["Manager", "Engineer", "Intern"],
+  choices: ["Manager", "Engineer", "Intern"],
 }];
 
 const questionForManager = [
