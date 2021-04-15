@@ -85,9 +85,9 @@ const init = async () => {
 
   if (!fs.existsSync(outPutPath)) {
     const e = await mkdirAsync(outPut_Dir);
-    error && console.error(e);
+    // error && console.error(e);
   }
   const e = await writeFileAsync(outPutPath, html);
-  error && console.erroe(e);
+  // error && console.erroe(e);
 }
 init();
