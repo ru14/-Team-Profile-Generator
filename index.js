@@ -79,6 +79,7 @@ const init = async () => {
     }
     const {adding} = await inquirer.prompt(confirm);
     addMore = adding;
+
   }
 
   const html = render(employee);
