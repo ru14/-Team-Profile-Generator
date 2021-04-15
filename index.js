@@ -69,6 +69,9 @@ const init = async () => {
 
     if(role === "Manager"){
       const{officeNumber} = await inquirer.prompt(questionForManager);
+      console.log("name: " + name);
+      console.log("id: " + id);
+      console.log("email: " + email);
       employee.push(new Manager(name, id, email, officeNumber));
     }else if (role === "Engineer") {
       const{github} = await inquirer.prompt(questionForEngineer);
