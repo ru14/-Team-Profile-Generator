@@ -20,20 +20,23 @@ const inquirer = require("inquirer");
 const questions = [{
   type: "name",
   message: "name of Employee?",
-  name: "name",
+  name: "name"
+  //validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
 },{
   type: 0,
   message: "please input Employee's id",
-  name: "id",
+  name: "id"
+  // validate: (value) => { if (value!== "number") { return true } else { return "i need number to continue" } }
 },{
   type: "email",
   message: "please input Employee email",
-  name: "email",
+  name: "email"
+  // validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
 },{
   type: "list",
   message: "What is Employee role?",
   name: "role",
-  choices: ["Manager", "Engineer", "Intern"],
+  choices: ["Manager", "Engineer", "Intern"]
 }];
 
 const questionForManager = [
@@ -41,23 +44,27 @@ const questionForManager = [
     type:0,
     message: "what is Manager's office number?",
     name: "officeNumber"
+    // validate: (value) => { if (value!== "number") { return true } else { return "i need number to continue" } }
   }];
 const questionForEngineer = [
   {
     type: "gitHubLink",
     message: "please provide Engineer's github?",
     name: "github"
+    // validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
   }];
 const questionForIntern = [
   {
     type: "school",
     message: "please provide Intern's School ",
     name: "school"
+    // validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
   }];
 const confirm =[{
   type: "confirm",
   name: "adding",
   message: "Do you want to Input more Employee information?"
+  
 }];
 
 const init = async () => {
@@ -86,9 +93,9 @@ const init = async () => {
 
   if (!fs.existsSync(outPutPath)) {
     const e = await mkdirAsync(outPut_Dir);
-    
+    //fs.mkdirSync(outPut_Dir)
   }
   const e = await writeFileAsync(outPutPath, html);
-  
+  //fs.writeFileAsync(outPutPath, render(employee),"utf-8")
 }
 init();
