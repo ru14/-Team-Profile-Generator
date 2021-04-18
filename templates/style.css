@@ -18,3 +18,12 @@ header {
     margin: 10px;
 }
 
+@media screen and (max-width: 600px) {
+    .card.employee-card {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  
