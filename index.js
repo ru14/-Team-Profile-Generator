@@ -20,18 +20,29 @@ const inquirer = require("inquirer");
 const questions = [{
   type: "name",
   message: "name of Employee?",
-  name: "name"
-  //validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
+  name: "name",
+  validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
 },{
   type: 0,
   message: "please input Employee's id",
-  name: "id"
-  // validate: (value) => { if (value!== "number") { return true } else { return "i need number to continue" } }
+  name: "id",
+  validate: (value) => { 
+    if (!isNaN(value)) { 
+      return true
+    } else {
+      return "i need number to continue"
+    }
+  }
 },{
   type: "email",
-  message: "please input Employee email",
-  name: "email"
-  // validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
+  message: "Please input employee email",
+  name: "email",
+  validate: function ValidateEmail(email)
+  {if(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){return true}
+  else
+  {return "i need value to continue"}
+  }
+  
 },{
   type: "list",
   message: "What is Employee role?",
@@ -43,22 +54,28 @@ const questionForManager = [
   {
     type:0,
     message: "what is Manager's office number?",
-    name: "officeNumber"
-    // validate: (value) => { if (value!== "number") { return true } else { return "i need number to continue" } }
+    name: "officeNumber",
+    validate: (value) => { 
+      if (!isNaN(value)) { 
+        return true
+      } else {
+        return "i need number to continue"
+      }
+    }
   }];
 const questionForEngineer = [
   {
     type: "gitHubLink",
     message: "please provide Engineer's github?",
-    name: "github"
-    // validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
+    name: "github",
+    validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
   }];
 const questionForIntern = [
   {
     type: "school",
     message: "please provide Intern's School ",
-    name: "school"
-    // validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
+    name: "school",
+    validate: (value) => { if (value) { return true } else { return "i need value to continue" } }
   }];
 const confirm =[{
   type: "confirm",
