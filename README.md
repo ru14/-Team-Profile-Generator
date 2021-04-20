@@ -34,7 +34,7 @@ THEN I exit the application, and the HTML is generated
 ## Website Video Demo
 https://user-images.githubusercontent.com/74753345/115322351-bca46e80-a13a-11eb-8000-2127d713be59.mp4
 
+## Review
 
-
-
-
+The URL of the GitHub repository
+https://github.com/ru14/Team-Profile-Generator
