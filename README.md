@@ -28,9 +28,13 @@ THEN I exit the application, and the HTML is generated
 ![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
 
 
-https://user-images.githubusercontent.com/74753345/115322351-bca46e80-a13a-11eb-8000-2127d713be59.mp4
 
 
 
 ## Website Video Demo
+https://user-images.githubusercontent.com/74753345/115322351-bca46e80-a13a-11eb-8000-2127d713be59.mp4
+
+
+
+
 
